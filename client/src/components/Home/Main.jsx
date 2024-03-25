@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../../assets/pic1.png';
+import'./Main.css';
 
 
 

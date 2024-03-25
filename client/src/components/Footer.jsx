@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { MdPlace } from "react-icons/md";
+import './Footer.css';
 
 
 
@@ -15,8 +16,9 @@ const Footer = () => {
                 <div className='row'>
                     <div className='col_1'>
                         <h1>Quizify</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum iaculis nunc, tristique sagittis nulla. Pellentesque a leo felis.
-                            Donec eu mollis diam, eget condimentum odio.</p>
+                        <p>Engage your intellect with our interactive quizzes,
+                            spanning diverse topics and difficulty levels. Challenge yourself, 
+                            track your progress, and compete for the top spot on our leaderboard!</p>
                         <FaGithub className='icon' />
                         <FaLinkedin className='icon' />
 
