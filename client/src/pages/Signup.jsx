@@ -8,60 +8,62 @@ import { AiFillLock } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 
 export default function Signup() {
-    const navigate = useNavigate()
-    const [data, setData] = useState({
-        name: '',
-        email: '',
-        password: '',
+    const history = useNavigate();
+    const [inputs, setinputs] = useState({
+        name: "",
+        email: "",
+        password: ""
     })
-
-
-    const signupUser = async (e) => {
-        e.preventDefault();
-        const { name, email, password } = data
-        try {
-            const { data } = await axios.post('/signup', {
-                name, email, password
-            })
-            if (data.error) {
-                toast.error(data.error)
-            } else {
-                setData({})
-                toast.success('Successfully Registered.')
-                navigate('/login')
-            }
-        } catch (error) {
-            console.log(error)
-        }
+    const handleChange = (e) => {
+        setinputs(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+    const sendRequest = async () => {
+        const res = axios.post('http://localhost:5000/api/signup', {
+            name: inputs.name,
+            email: inputs.email,
+            password: inputs.password
+        }).catch(err => console.log(err));
+        const data = await res.data;
+        return data;
     }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(inputs);
+        // send http request
+        sendRequest()
+        .then(() => history("/login"));
+    };
 
     return (
         <div className='container-signup'>
-        <div className='wrapper-signup'>
-            <form onSubmit={signupUser}>
-                <h1>Register</h1>
-                <div className='input'>
-                    <input type="text" name='name' id='name' placeholder='Full Name' value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
-                    <FaUser className='icon' />
-                </div>
+            <div className='wrapper-signup'>
+                <form onSubmit={handleSubmit}>
+                    <h1>Register</h1>
+                    <div className='input'>
+                        <input onChange={handleChange} type="text" name='name' id='name' placeholder='Full Name' value={inputs.name} />
+                        <FaUser className='icon' />
+                    </div>
 
-                <div className='input'>
-                    <input type="email" name='email' id='email' placeholder='youremail@gmail.com' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />
-                    <MdEmail className='icon' />
-                </div>
-                
+                    <div className='input'>
+                        <input onChange={handleChange} type="email" name='email' id='email' placeholder='youremail@gmail.com' value={inputs.email} />
+                        <MdEmail className='icon' />
+                    </div>
 
-                <div className='input'>
-                    <input type="password" name='password' id='password' placeholder='password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} />
-                    <AiFillLock className='icon' />
-                </div>
 
-                <button onSubmit={signupUser} type='submit'>Sign Up</button>
-            </form>
-            <div className="register-link">
-                <p>Don't have an account?<Link to='/login'> Login here.</Link></p>
+                    <div className='input'>
+                        <input onChange={handleChange} type="password" name='password' id='password' placeholder='password' value={inputs.password} />
+                        <AiFillLock className='icon' />
+                    </div>
+
+                    <button type='submit'>Sign Up</button>
+                </form>
+                <div className="register-link">
+                    <p>Don't have an account?<Link to='/login'> Login here.</Link></p>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

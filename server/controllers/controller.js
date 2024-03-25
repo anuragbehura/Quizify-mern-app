@@ -1,7 +1,7 @@
 const User = require('../model/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
@@ -86,9 +86,15 @@ const verifyToken = (req, res, next) => {
     next();
 };
 
+// const user = new User({
+//     name: name,
+//     email: email,
+//     password: hashedPassword,
+// });
+
 const getUser = async (req, res, next) => {
     const userId = req.id;
-    let user;
+    let user; 
     try {
         user = await User.findById(userId, "-password");
     } catch (err) {
@@ -97,8 +103,10 @@ const getUser = async (req, res, next) => {
     if (!user) {
         return res.status(404).json({ message: "User Not Found" })
     }
-    return res.status(200).json({ user })
+    return res.status(200).json({ user });
 }
+
+
 
 
 exports.signup = signup;
