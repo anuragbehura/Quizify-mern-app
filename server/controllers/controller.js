@@ -54,12 +54,12 @@ const login = async (req, res, next) => {
         return res.status(400).json({ message: 'Invaild Email / Password' })
     }
     const token = jwt.sign({ id: existingUser._id }, JWT_SECRET_KEY, {
-        expiresIn: "30d"
+        expiresIn: "90d"
     });
 
     res.cookie(String(existingUser._id), token, {
         path: '/',
-        expires: new Date(Date.now() + 1000 * 30),
+        expires: new Date(Date.now() + 1000 * 60 * 30),
         httpOnly: true,
         sameSite: 'lax'
     })

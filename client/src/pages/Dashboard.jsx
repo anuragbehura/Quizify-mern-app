@@ -14,7 +14,7 @@ const Dashboard = () => {
     return data;
   }
   useEffect(() => {
-    sendRequest().catch(err => console.log(err));
+    sendRequest().then((data)=> setUser(data.user))
   }, []);
   return (
     <div>

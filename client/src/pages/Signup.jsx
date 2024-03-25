@@ -52,7 +52,6 @@ export default function Signup() {
                         <MdEmail className='icon' />
                     </div>
 
-
                     <div className='input'>
                         <input onChange={handleChange} type="password" name='password' id='password' placeholder='password' value={inputs.password} />
                         <AiFillLock className='icon' />
