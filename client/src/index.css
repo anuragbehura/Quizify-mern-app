@@ -9,6 +9,34 @@
   font-style: normal
 }
 
+html{
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #343333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom scrollbar */
 
 .page1 {
   height: 100vh;
