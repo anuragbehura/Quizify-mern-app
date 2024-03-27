@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import ForgotPassword from './pages/Forgot'
 import { ToastContainer, toast } from 'react-toastify'
+import ResetPassword from './pages/ResetPassword'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Route path='/signup' element={ <Signup /> } />
       <Route path='/login' element={ <Login /> } />
       <Route path='/forgotPassword' element={ <ForgotPassword /> } />
+      <Route path='/resetPassword/:token' element={ <ResetPassword /> } />
       <Route path='/user' element={ <Dashboard /> } />
     </Routes>
     </>
