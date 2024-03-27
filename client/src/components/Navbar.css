@@ -1,0 +1,47 @@
+.header {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  padding: 10px 40px;
+
+}
+
+.heading h1 {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+
+.heading h1:hover {
+  transform: scale(1.1);
+  color: #ffd839
+}
+
+
+.header .navigation {
+  list-style: none;
+}
+
+.header .navigation ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 10px 30px;
+}
+
+.header .navigation ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header .navigation ul li a:hover {
+  color: #ffd839;
+
+}
