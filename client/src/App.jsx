@@ -9,7 +9,11 @@ import Dashboard from './pages/Dashboard'
 =======
 import ForgotPassword from './pages/Forgot'
 import { ToastContainer, toast } from 'react-toastify'
+<<<<<<< HEAD
+import ResetPassword from './pages/ResetPassword'
+=======
 >>>>>>> 3faf813a1686e537e6147129b7cfa8b0a9440fa0
+>>>>>>> 1942cec3781a6cadfcd387f0a7dba797cfd5ae9a
 
 
 function App() {
@@ -34,6 +38,7 @@ function App() {
       <Route path='/signup' element={ <Signup /> } />
       <Route path='/login' element={ <Login /> } />
       <Route path='/forgotPassword' element={ <ForgotPassword /> } />
+      <Route path='/resetPassword/:token' element={ <ResetPassword /> } />
       <Route path='/user' element={ <Dashboard /> } />
     </Routes>
     </>

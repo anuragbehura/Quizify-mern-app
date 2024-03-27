@@ -1,18 +1,19 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useParams } from 'react-router-dom'
 import './CSS/Login.css'
-import { MdEmail } from 'react-icons/md'
+import { AiFillLock } from "react-icons/ai";
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export default function Forgot() {
+export default function ResetPassword() {
     // Notify function
-    const notifyEmail = () => toast.success('➡️ Check your email for reset password link')
+    const notifyEmail = () => toast.success('Password Successfilly Updated')
 
+    const { token } = useParams();
     const history = useNavigate();
     const [inputs, setinputs] = useState({
-        email: "",
+        password: "",
     })
     const handleChange = (e) => {
         setinputs(prev => ({
@@ -21,8 +22,8 @@ export default function Forgot() {
         }));
     };
     const sendRequest = async () => {
-        const res = axios.post('http://localhost:5000/api/v1/forgot-password', {
-            email: inputs.email,
+        const res = axios.post('http://localhost:5000/api/v1/reset-password/'+token, {
+            password: inputs.password,
         }).catch(err => console.log(err));
         const data = await res.data;
         return data;
@@ -43,19 +44,19 @@ export default function Forgot() {
         <div className='container-login'>
             <div className='wrapper-login'>
                 <form onSubmit={handleSubmit}>
-                    <h1>Forgot Password</h1>
+                    <h1>Reset Password</h1>
                     <div className='input'>
                         <input 
                         onChange={handleChange} 
-                        type="email" 
-                        placeholder='youremail@gmail.com' 
-                        id='email' 
-                        name='email' 
-                        value={inputs.email} 
+                        type="password" 
+                        placeholder='new password' 
+                        id='password' 
+                        name='password' 
+                        value={inputs.password} 
                         />
-                        <MdEmail className='icon' />
+                        <AiFillLock className='icon' />
                     </div>
-                    <button type='submit'>Send Email</button>
+                    <button type='submit'>Update</button>
 
                 </form>
                 <div className="register-link">

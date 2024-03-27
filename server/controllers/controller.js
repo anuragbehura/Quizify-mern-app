@@ -1,10 +1,14 @@
 const User = require('../model/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const { v4: uuidv4 } = require('uuid')
 require('dotenv').config();
 
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 const NODE_ENV = process.env.NODE_ENV;
+const EMAIL = process.env.EMAIL;
+const EMAIL_PASS = process.env.EMAIL_PASS;
 
 
 const signup = async (req, res, next) => {
@@ -79,9 +83,9 @@ const verifyToken = (req, res, next) => {
     if (!token) {
         res.status(404).json({ message: "No token found" })
     }
-    jwt.verify(String(token),JWT_SECRET_KEY, (err, user) => {
+    jwt.verify(String(token), JWT_SECRET_KEY, (err, user) => {
         if (err) {
-            return res.status(400).json({ message:"Invaild Token" })
+            return res.status(400).json({ message: "Invaild Token" })
         }
         console.log(user.id);
         req.id = user.id;
@@ -97,7 +101,7 @@ const verifyToken = (req, res, next) => {
 
 const getUser = async (req, res, next) => {
     const userId = req.id;
-    let user; 
+    let user;
     try {
         user = await User.findById(userId, "-password");
     } catch (err) {
@@ -120,7 +124,50 @@ const checkAuth = (req, res) => {
 }
 
 
+const forgotPassword = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
 
+        const cookies = req.headers.cookie;
+        const token = cookies.split("=")[1];
+        
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: EMAIL,
+                pass: EMAIL_PASS
+            }
+        });
+
+        const mailOptions = {
+            from: EMAIL,
+            to: email,
+            subject: 'Reset Password',
+            text: `http://localhost:5173/resetPassword/${token}`
+        };
+
+        await transporter.sendMail(mailOptions);
+        return res.json({ status: true, message: "Email sent" });
+    } catch (err) {
+        console.error("Error:", err);
+        return res.status(500).json({ message: "Error sending email" });
+    }
+}
+
+const resetPassword = async (req, res) => {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET_KEY);
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 exports.signup = signup;
 exports.login = login;
@@ -128,4 +175,6 @@ exports.logout = logout;
 exports.verifyToken = verifyToken;
 exports.getUser = getUser;
 exports.checkAuth = checkAuth;
+exports.forgotPassword = forgotPassword;
+exports.resetPassword = resetPassword;
 
