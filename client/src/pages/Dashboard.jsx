@@ -7,10 +7,11 @@ const Dashboard = () => {
   const [user, setUser] = useState();
 
   const sendRequest = async () =>  {
-    const res = await axios.get('http://localhost:5000/api/user', {
+    const res = await axios.get('http://localhost:5000/api/v1/user', {
       withCredentials: true
     }).catch(err => console.log(err));
     const data = await res.data;
+    // console.log(data);
     return data;
   }
   useEffect(() => {

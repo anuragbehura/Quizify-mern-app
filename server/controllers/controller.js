@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+const NODE_ENV = process.env.NODE_ENV;
 
 
 const signup = async (req, res, next) => {
@@ -53,21 +54,23 @@ const login = async (req, res, next) => {
     if (!isPasswordCorrect) {
         return res.status(400).json({ message: 'Invaild Email / Password' })
     }
-    const token = jwt.sign({ id: existingUser._id }, JWT_SECRET_KEY, {
-        expiresIn: "90d"
-    });
+    // create a json web token
+    const expires = Date.now() + 1000 * 60 * 60 * 24 * 30;
+    const token = jwt.sign({ id: existingUser._id, expires }, JWT_SECRET_KEY);
 
-    res.cookie(String(existingUser._id), token, {
+    // set the cookie
+    res.cookie("Authorization", token, {
         path: '/',
-        expires: new Date(Date.now() + 1000 * 60 * 30),
+        expires: new Date(expires),
         httpOnly: true,
-        sameSite: 'lax'
+        sameSite: 'lax',
+        secure: NODE_ENV === "production",
     })
 
     return res
         .status(200)
         .json({ message: 'Successfully Logged In', user: existingUser, token })
-}
+};
 
 const verifyToken = (req, res, next) => {
     const cookies = req.headers.cookie;
@@ -106,11 +109,23 @@ const getUser = async (req, res, next) => {
     return res.status(200).json({ user });
 }
 
+const logout = (req, res) => {
+    res.clearCookie("Authorization");
+    res.sendStatus(200);
+}
+
+const checkAuth = (req, res) => {
+    console.log(req.user);
+    res.status(200);
+}
+
 
 
 
 exports.signup = signup;
 exports.login = login;
+exports.logout = logout;
 exports.verifyToken = verifyToken;
 exports.getUser = getUser;
+exports.checkAuth = checkAuth;
 

@@ -10,12 +10,13 @@ const MONGO_URI = process.env.MONGO_URI;
 
 const app = express();
 app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST"],
     credentials: true,
-    origin:"http://localhost:5173"
 }));
 app.use(cookieParser());
 app.use(express.json());
-app.use('/api', router);
+app.use('/api/v1', router);
 mongoose
 .connect(MONGO_URI)
 .then(() => {

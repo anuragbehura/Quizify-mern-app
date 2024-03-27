@@ -1,25 +1,38 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { toast } from 'react-hot-toast'
 import { useNavigate, Link } from 'react-router-dom'
 import './CSS/Login.css'
 import { MdEmail } from 'react-icons/md'
 import { AiFillLock } from "react-icons/ai";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+//coustom toast messaage
+
 
 export default function Login() {
+  // toast message functions
+  const notify = () => toast.success('Logged in successfully', { autoClose:2000 })
+  const notifyForgotPassword = () => toast.info('To reset your password write your email and click on send email button', {autoClose: 9000})
+  const notifyUser = () => toast('👨 Welcome Bhai!', { delay: 5000, autoClose: 6000 })
+
+  // navigate init
   const history = useNavigate();
-  const [inputs, setinputs] = useState({
+  const [inputs, setinputs] = useState({  // using states over here
     email: "",
     password: ""
   })
-  const handleChange = (e) => {
+  const handleChange = (e) => { // handlling inputs
     setinputs(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-  const sendRequest = async () => {
-    const res = axios.post('http://localhost:5000/api/login', {
+  
+
+  // using POST request to pushing the data to backend
+  const sendRequest = async () => {  
+    const res = axios.post('http://localhost:5000/api/v1/login', {
       email: inputs.email,
       password: inputs.password
     }).catch(err => console.log(err));
@@ -28,11 +41,14 @@ export default function Login() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
     // send http request
     sendRequest()
       .then(() => history("/user"));
+
+    notify(); 
+    notifyUser();
   };
+  
 
 
   return (
@@ -52,6 +68,7 @@ export default function Login() {
 
         </form>
         <div className="register-link">
+          <Link onClick={notifyForgotPassword} to="/forgotPassword">Forgot Password</Link>
           <p>Don't have an account?<Link to='/signup'> Register here.</Link></p>
         </div>
       </div>

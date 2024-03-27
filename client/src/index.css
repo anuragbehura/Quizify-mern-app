@@ -9,8 +9,73 @@
   font-style: normal
 }
 
+<<<<<<< HEAD
 html {
   overflow-x: hidden;
+=======
+html{
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #343333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom scrollbar */
+
+.page1 {
+  height: 100vh;
+  width: 100vw;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  padding: 10px 40px;
+
+}
+
+.heading h1 {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+
+.heading h1:hover {
+  transform: scale(1.1);
+  color: #ffd839
+>>>>>>> 3faf813a1686e537e6147129b7cfa8b0a9440fa0
 }
 
 

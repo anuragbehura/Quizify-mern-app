@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { toast } from 'react-hot-toast'
 import { useNavigate, Link } from 'react-router-dom'
 import './CSS/Signup.css'
 import { MdEmail } from 'react-icons/md'
 import { AiFillLock } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Signup() {
+    const notify = () => toast.success('Successfully Registered')
     const history = useNavigate();
     const [inputs, setinputs] = useState({
         name: "",
@@ -21,7 +23,7 @@ export default function Signup() {
         }));
     };
     const sendRequest = async () => {
-        const res = axios.post('http://localhost:5000/api/signup', {
+        const res = axios.post('http://localhost:5000/api/v1/signup', {
             name: inputs.name,
             email: inputs.email,
             password: inputs.password
@@ -34,7 +36,8 @@ export default function Signup() {
         console.log(inputs);
         // send http request
         sendRequest()
-        .then(() => history("/login"));
+            .then(() => history("/login"));
+        notify();
     };
 
     return (
