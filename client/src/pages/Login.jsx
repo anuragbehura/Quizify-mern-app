@@ -7,45 +7,45 @@ import { MdEmail } from 'react-icons/md'
 import { AiFillLock } from "react-icons/ai";
 
 export default function Login() {
-  const navigate = useNavigate()
-  const [data, setData] = useState({
-    email: '',
-    password: '',
+  const history = useNavigate();
+  const [inputs, setinputs] = useState({
+    email: "",
+    password: ""
   })
-
-  const loginUser = async (e) => {
-    e.preventDefault()
-    const { email, password } = data
-    try {
-      const { data } = await axios.post('/login', {
-        email,
-        password
-      });
-      if (data.error) {
-        toast.error(data.error)
-      } else {
-        setData({});
-        toast.success('Successfully Logged in.')
-        navigate('/dashboard')
-        toast('Welcome!')
-      }
-    } catch (error) {
-
-    }
+  const handleChange = (e) => {
+    setinputs(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+  const sendRequest = async () => {
+    const res = axios.post('http://localhost:5000/api/login', {
+      email: inputs.email,
+      password: inputs.password
+    }).catch(err => console.log(err));
+    const data = await res.data;
+    return data;
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs);
+    // send http request
+    sendRequest()
+      .then(() => history("/user"));
+  };
 
 
   return (
     <div className='container-login'>
       <div className='wrapper-login'>
-        <form onSubmit={loginUser}>
+        <form onSubmit={handleSubmit}>
           <h1>Login</h1>
           <div className='input'>
-            <input type="email" placeholder='youremail@gmail.com' id='email' name='email' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />
+            <input onChange={handleChange} type="email" placeholder='youremail@gmail.com' id='email' name='email' value={inputs.email} />
             <MdEmail className='icon' />
           </div>
           <div className='input'>
-            <input type="password" placeholder='password' id='password' name='password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} />
+            <input onChange={handleChange} type="password" placeholder='password' id='password' name='password' value={inputs.password} />
             <AiFillLock className='icon' />
           </div>
           <button type='submit'>Log in</button>

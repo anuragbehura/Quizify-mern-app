@@ -1,10 +1,10 @@
 import './index.css'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Landing from './pages/Landing'
-import Signup from './pages/Signup'
-import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
+import Landing from './Pages/Landing'
+import Signup from './Pages/Signup'
+import Login from './Pages/Login'
+import Dashboard from './Pages/Dashboard'
 
 
 

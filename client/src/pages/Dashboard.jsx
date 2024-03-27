@@ -1,9 +1,26 @@
-import React from 'react'
+import axios from 'axios';
+import {React, useEffect, useState } from 'react'
 
-function Dashboard() {
+axios.defaults.withCredentials = true;
+
+const Dashboard = () => {
+  const [user, setUser] = useState();
+
+  const sendRequest = async () =>  {
+    const res = await axios.get('http://localhost:5000/api/user', {
+      withCredentials: true
+    }).catch(err => console.log(err));
+    const data = await res.data;
+    return data;
+  }
+  useEffect(() => {
+    sendRequest().then((data)=> setUser(data.user))
+  }, []);
   return (
-    <div>Dashboard</div>
+    <div>
+      {user && <h1>{user.name}</h1>}
+    </div>
   )
 }
 
-export default Dashboard
+export default Dashboard;
