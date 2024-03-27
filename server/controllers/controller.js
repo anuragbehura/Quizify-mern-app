@@ -101,17 +101,32 @@ const verifyToken = (req, res, next) => {
 
 const getUser = async (req, res, next) => {
     const userId = req.id;
-    let user;
     try {
-        user = await User.findById(userId, "-password");
+        // Attempt to find the user in the database
+        const user = await User.findById(userId, "-password");
+
+        // If no user found, send a 404 response
+        if (!user) {
+            return res.status(404).json({ message: "User Not Found" });
+        }
+
+        // If user found, send it as a JSON response
+        return res.status(200).json({ user });
     } catch (err) {
-        return new Error(err)
+        // If an error occurs during the database operation
+        console.error("Error in getUser:", err);
+
+        // Check for specific error types
+        if (err.name === 'CastError') {
+            // Handle invalid user ID
+            return res.status(400).json({ message: "Invalid User ID" });
+        }
+
+        // For other errors, send a generic error response
+        return res.status(500).json({ message: "Internal Server Error" });
     }
-    if (!user) {
-        return res.status(404).json({ message: "User Not Found" })
-    }
-    return res.status(200).json({ user });
 }
+
 
 const logout = (req, res) => {
     res.clearCookie("Authorization");
