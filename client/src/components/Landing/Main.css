@@ -1,61 +1,87 @@
-
 .page1 {
-    height: 100vh;
-    width: 100vw;
-    background-color: #000;
-  }
-  
-  
-  .main {
-    display: flex;
-    height: 80%;
-    align-items: center;
-  }
-  
-  .content {
-    flex-basis: 50%;
-    margin-left: 5rem;
-  
-  }
-  
-  .content h2 {
-    font-size: 45px;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .content p {
-    font-size: 20px;
-    color: #fff;
-    font-weight: 500;
-    margin-top: 20px;
-    margin-right: 10rem;
-  }
-  
-  .content button {
-    padding: 1rem 1.5rem;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    white-space: nowrap;
-    color: var(--black);
-    background-color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 1.5px 10px 30px #000;
-    margin-top: 2rem;
-  
-  }
-  
-  .content button:hover {
-    background-color: #04293A;
-    color: #fff;
-    box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
-  
-  }
-  
-  
-  .image:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-  }
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+
+}
+
+.main-content {
+  padding-top: 6rem;
+  padding-left: 6rem;
+  padding-bottom: 4rem;
+  padding-right: 6rem;
+
+}
+
+.main {
+  display: flex;
+  height: 600px;
+  align-items: center;
+  border-radius: 2%;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
+  box-shadow: 10px 0px 10px #04293A;
+  backdrop-filter: blur(25px);
+
+
+}
+
+
+
+
+.content {
+  flex-basis: 50%;
+  margin-left: 5rem;
+
+}
+
+.content h2 {
+  font-size: 45px;
+  color: #fff;
+  font-weight: 600;
+}
+.content h3{
+  font-size: 45px;
+  background: -webkit-linear-gradient(rgb(83, 75, 140), rgb(147, 16, 147));
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.content p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-right: 10rem;
+}
+
+.content button {
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--black);
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1.5px 10px 30px #000;
+  margin-top: 2rem;
+
+}
+
+.content button:hover {
+  background: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
+  color: #fff;
+  box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
+
+}
+
+
+.image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

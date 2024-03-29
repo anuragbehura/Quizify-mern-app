@@ -1,5 +1,5 @@
 .page2 {
-  background-color: #282A3A;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
 }
 
 .section {
@@ -7,15 +7,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 
 .section h1 {
   color: #fff;
   font-size: 32px;
-  text-align: center;
-  justify-content: center;
 }
 
 .slider-container {
@@ -36,14 +33,15 @@
 }
 
 .content1 h3 {
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .content1 p {
   color: #d8d0f6;
   font-size: 16px;
-  padding-top: 1px;
+  margin: 0;
 }
 
 .slick-slider button {
@@ -57,16 +55,26 @@
   z-index: 99;
 }
 
-.slick-slider .slick-prev {
-  left: -20px;
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 99;
+  font-size: 0; 
 }
 
-.slick-slider .slick-next {
-  right: -20px;
+.slick-prev {
+  left: 10px;
 }
 
-
-
+.slick-next {
+  right: 10px;
+}
 
 .slick-slide {
   padding: 20px;
@@ -80,23 +88,9 @@
   opacity: 1;
   transform: scale(1.1);
 }
-
-.slick-prev,
-.slick-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  z-index: 99;
+button.slick-arrow.slick-prev{
+  font-size: 0;
 }
-
-.slick-prev {
-  left: 0;
-}
-
-.slick-next {
-  right: 0;
+button.slick-arrow.slick-next{
+  font-size: 0;
 }

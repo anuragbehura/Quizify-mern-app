@@ -1,6 +1,9 @@
 import React from 'react';
 import image from '../../assets/pic1.png';
 import'./Main.css';
+import '../Navbar';
+
+
 
 
 
@@ -8,9 +11,11 @@ import'./Main.css';
 const Main = () => {
     return (
         <div className='page1'>
+            <div className='main-content'>
             <div className='main'>
                 <div className='content'>
-                    <h2>Wisdom in Waves:Dive into Quizzes</h2>
+                    <h2>Wisdom in Waves:</h2>
+                    <h3>Dive into Quizzes</h3>
                     <p>Explore the realm of knowledge at Quizify.</p>
                     <p>Quizzes that entertain, challenge, and enlighten</p>
                     <button type='button'>Get Started</button>
@@ -19,7 +24,7 @@ const Main = () => {
                     <img src={image} alt='front pic' height={400} />
                 </div>
             </div>
- 
+            </div>
         </div>
 
 
