@@ -6,7 +6,7 @@ const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 async function authentication(req, res, next) {
     try  {
-        const token = req.cookies.Authorization.split("=")[1];
+        const token = req.headers['cookies'];
 
         const decoded = jwt.verify(token, JWT_SECRET_KEY);
 
@@ -20,7 +20,7 @@ async function authentication(req, res, next) {
     } catch(err){
         res.status(401).json({ error: 'Unauthorized' });
     }
-
+    next();
 }
 
 module.exports = authentication;

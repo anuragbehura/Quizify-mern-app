@@ -6,6 +6,8 @@ import { AiFillLock } from "react-icons/ai";
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
+axios.defaults.withCredentials = true;
+
 export default function ResetPassword() {
     // Notify function
     const notifyEmail = () => toast.success('Password Successfilly Updated')
