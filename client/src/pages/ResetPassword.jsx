@@ -12,7 +12,7 @@ export default function ResetPassword() {
     // Notify function
     const notifyEmail = () => toast.success('Password Successfilly Updated')
 
-    const { token } = useParams();
+    const { tokenUUID } = useParams();
     const history = useNavigate();
     const [inputs, setinputs] = useState({
         password: "",
@@ -24,7 +24,7 @@ export default function ResetPassword() {
         }));
     };
     const sendRequest = async () => {
-        const res = axios.post('http://localhost:5000/api/v1/reset-password/'+token, {
+        const res = axios.post('http://localhost:5000/api/v1/reset-password/'+tokenUUID, {
             password: inputs.password,
         }).catch(err => console.log(err));
         const data = await res.data;

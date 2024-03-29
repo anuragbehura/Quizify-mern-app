@@ -1,9 +1,13 @@
 import React from 'react'
-import AfterNav from '../components/AfterNav'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 function Home() {
   return (
-    <AfterNav />
+    <div>
+      <Navbar />
+      <Footer />
+    </div>
   )
 }
 

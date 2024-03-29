@@ -1,26 +1,38 @@
 const jwt = require('jsonwebtoken');
-const User = require('../model/User')
 require('dotenv').config();
 
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
-async function authentication(req, res, next) {
-    try  {
-        const token = req.headers['cookies'];
-
-        const decoded = jwt.verify(token, JWT_SECRET_KEY);
-
-        const user = await User.findById(decoded.id);
+const refresh = async (req, res, next) => {
+    const cookies = req.headers.cookie;
+    const prevToken = cookies.split("=")[1];
 
 
-        if (!user) {
-            return res.sendStatus(401);
-        }
-        req.user = user;
-    } catch(err){
-        res.status(401).json({ error: 'Unauthorized' });
+    if (!prevToken) {
+        return res.status(404).json({ message: "No token found" });
     }
-    next();
-}
+    jwt.verify(String(prevToken), JWT_SECRET_KEY, (error, user) => {
+        if(error) {
+            return res.status(400).json({ message: "Invalid token" })
+        }
+        res.clearCookie(String(user.id)); // clear the prevToken
 
-module.exports = authentication;
+        const token = jwt.sign({ id: user.id }, JWT_SECRET_KEY, {
+            expiresIn: "35s",
+        });
+
+        res.cookie(String(user.id), token, {
+            path: "/",
+            expiresIn : new Date(Date.now() + 1000 * 35),
+            httpOnly: true,
+            sameSite: "lax",
+        });
+
+        req.id = user.id;
+    }); 
+    next();
+
+};
+
+
+exports.refresh = refresh;
