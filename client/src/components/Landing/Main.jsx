@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../../assets/pic1.png';
 import'./Main.css';
 import '../Navbar';
-
+import Navbar from '../Navbar';
 
 
 
@@ -13,6 +13,7 @@ const Main = () => {
         <div className='page1'>
             <div className='main-content'>
             <div className='main'>
+                <Navbar></Navbar>
                 <div className='content'>
                     <h2>Wisdom in Waves:</h2>
                     <h3>Dive into Quizzes</h3>
