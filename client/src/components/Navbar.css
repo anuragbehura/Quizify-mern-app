@@ -1,13 +1,12 @@
 .header {
- 
-    color: white; 
-    padding: 10px 20px; 
-    width: 100%; 
-    box-sizing: border-box; 
-    font-size: 18px;
-    position:absolute; 
-    top: 0; 
-    left: 0; 
+  color: white; 
+  padding: 10px 20px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  font-size: 18px;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
 }
 
 .heading h1 {

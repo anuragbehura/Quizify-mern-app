@@ -6,8 +6,6 @@ import Navbar from '../Navbar';
 
 
 
-
-
 const Main = () => {
     return (
         <div className='page1'>
