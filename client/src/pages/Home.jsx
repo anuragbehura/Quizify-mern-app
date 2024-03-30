@@ -1,13 +1,24 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+// import AfterNav from '../components/AfterNav'
+import Main from '../components/Home/Main'
+import '../components/Home/Main.css'
+
 
 function Home() {
   return (
-    <div>
-      <Navbar />
-      <Footer />
-    </div>
+    <>
+      <div className='HomeNav'>
+        <Navbar />
+      </div>
+      <div className='HomeMain'>
+        <Main />
+      </div>
+      <div className='HomeFooter'>
+        <Footer />
+      </div>
+    </>
   )
 }
 

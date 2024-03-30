@@ -58,15 +58,13 @@ const login = async (req, res) => {
         }
 
         // Create a JSON Web Token
-        // const expires = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days
-        const token = jwt.sign({ id: existingUser._id }, JWT_SECRET_KEY, {
-            expiresIn: "30s"
-        });
+        const expires = Date.now() + 1000 * 60 * 60 * 24 * 30; // 30 days
+        const token = jwt.sign({ id: existingUser._id, expires }, JWT_SECRET_KEY);
 
         // Set the cookie
         res.cookie("cookies", token, {
             path: '/',
-            expiresIn: new Date(Date.now() + 1000 * 30),
+            expiresIn: expires,
             httpOnly: true,
             sameSite: 'lax',
             secure: NODE_ENV === "production",
@@ -107,6 +105,7 @@ const verifyToken = (req, res, next) => {
 const getUser = async (req, res, next) => {
     try {
         const userId = req.id;
+
         // console.log(userId)
         // Attempt to find the user in the database
         const user = await User.findById(userId, "-password");
@@ -131,6 +130,7 @@ const getUser = async (req, res, next) => {
         // For other errors, send a generic error response
         return res.status(500).json({ message: "Internal Server Error" });
     }
+
 }
 
 
