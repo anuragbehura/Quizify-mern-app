@@ -44,9 +44,8 @@ const Navbar = () => {
             </div>
             <nav className="nav_content">
                 <ul>
-                    <li><Link to='/'>Enter Code</Link></li>
-                    <li><Link to='/signup'>Sign up</Link></li>
-                    <li><Link to='/login'>Log in</Link></li>
+                    <li><Link to='/profile'>Dashboard</Link></li>
+                    <li><Link to='/'>About</Link></li>
                     <li><Link onClick={handleLogout}>Logout</Link></li>
                 </ul>
             </nav>
