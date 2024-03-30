@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import AfterNav from '../components/Home/AfterNav'
 
 // import AfterNav from '../components/AfterNav'
-import Main from '../components/Home/Main'
+import Main from '../components/Home/HomeMain'
 import '../components/Home/Main.css'
 
 
