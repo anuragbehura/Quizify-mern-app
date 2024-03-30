@@ -24,7 +24,7 @@
   }
   
   .nav_heading h1:hover {
-    transform: scale(1);
+    transform: scale(1.1);
     background: -webkit-linear-gradient(#4133a8, rgb(176, 21, 176));
     background-clip:text;
     -webkit-text-fill-color: transparent;
