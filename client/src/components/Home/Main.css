@@ -1,13 +1,9 @@
-.HomeNav{
-    top: 0;
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-}
-
 .HomeFooter{
     bottom: 0;
     position: absolute;
     height: fit-content;
     width: fit-content;
+}
+.main-page{
+    background-color: rgb(169, 97, 8);
 }
