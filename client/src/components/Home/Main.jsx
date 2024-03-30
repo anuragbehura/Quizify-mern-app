@@ -9,35 +9,35 @@ import AuthContext from '../../context/AuthContext';
 axios.defaults.withCredentials = true;
 
 function Main() {
-  const { user, setUser } = useState(AuthContext);
-  //   const { isAuth, setIsAuth } = useContext(AuthContext);
-  const navigate = useNavigate();
+    const { user, setUser } = useState();
+    //   const { isAuth, setIsAuth } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const res = await axios.get('http://localhost:5000/api/v1/user', {
-          withCredentials: true,
-        });
-        const data = await res.data;
-        setUser(data.message);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-        toast.error('Failed to fetch user data.');
-      }
-    };
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await axios.get('http://localhost:5000/api/v1/user', {
+                    withCredentials: true,
+                });
+                const data = await res.data;
+                setUser(data.message);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                toast.error('Failed to fetch user data.');
+            }
+        };
 
-    fetchUserData();
-  }, []);
+        fetchUserData();
+    }, []);
 
-  return (
-    <div>
-        <nav>
-          <span><Link to='/dashboard'>{ user && <h1>Welcome { user.name }</h1> }</Link></span>
-        </nav>
-    </div>
-  )
+    return (
+        <div>
+            <nav>
+                <span><Link to='/dashboard'>{user && <h1>Welcome {user.name}</h1>}</Link></span>
+            </nav>
+        </div>
+    )
 }
 
 export default Main

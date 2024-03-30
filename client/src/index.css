@@ -11,8 +11,7 @@
 
 html {
   overflow-x: hidden;
-html{
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
@@ -69,7 +68,4 @@ html{
 .heading h1:hover {
   transform: scale(1.1);
   color: #ffd839
-}
-
-
 }
