@@ -14,7 +14,7 @@ const Navbar = () => {
       </div>
       <nav className="navigation">
         <ul>
-          <li><Link to='/'>Enter Code</Link></li>
+          <li><Link to='/about'>About</Link></li>
           <li><Link to='/signup'>Sign up</Link></li>
           <li><Link to='/login'>Log in</Link></li>
         </ul>
