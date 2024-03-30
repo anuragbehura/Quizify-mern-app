@@ -10,10 +10,6 @@
     left: 0; 
 }
 
-  
-
-
-
 .heading h1 {
   font-size: 35px;
   color: #fff;
@@ -24,9 +20,10 @@
 
 .heading h1:hover {
   transform: scale(1.1);
-  color: #ffd839
+  background: -webkit-linear-gradient(#4133a8, rgb(176, 21, 176));
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
 }
-
 
 .header .navigation {
   list-style: none;
@@ -47,6 +44,8 @@
 }
 
 .header .navigation ul li a:hover {
-  color: #ffd839;
+  background: -webkit-linear-gradient(#968ddb, rgb(206, 103, 206));
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
 
 }
