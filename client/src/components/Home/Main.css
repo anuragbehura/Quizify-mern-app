@@ -5,7 +5,6 @@
     width: fit-content;
 }
 .main-page{
-<<<<<<< HEAD
     background-color: rgb(169, 97, 8);
 }
 
@@ -34,7 +33,6 @@ h2{
 
 
 
-=======
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 80dvh;
     position: relative;
@@ -81,4 +79,3 @@ input[type="enter-code"] {
 input[type="enter-code"]::placeholder {
     color: #999; /* Placeholder text color */
 }
->>>>>>> 0b46f45720ee01155c9e2e3595af66dcc847b64e
