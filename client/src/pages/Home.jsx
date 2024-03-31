@@ -9,17 +9,11 @@ import '../components/Home/HomeMain.css'
 
 function Home() {
   return (
-    <>
-      <div className='HomeNav'>
-        <AfterNav />
-      </div>
-      <div className='HomeMain'>
-        <Main />
-      </div>
-      <div className='HomeFooter'>
-        <Footer />
-      </div>
-    </>
+    <div className='Home'>
+      <AfterNav />
+      <Main />
+      <Footer />
+    </div>
   )
 }
 

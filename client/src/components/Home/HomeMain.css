@@ -1,14 +1,11 @@
-.HomeFooter {
-    bottom: 0;
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-}
-.main-page{
-    background-color: rgb(169, 97, 8);
+.Home {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
-h2{
+
+h2 {
     font-size: 30px;
     color: black;
     font-weight: 900;
@@ -16,30 +13,34 @@ h2{
 }
 
 
-.main-page-content{
+.main-page-content {
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
-    height: 80dvh;
+    height: 100dvh;
     position: relative;
     padding-top: 6rem;
     padding-bottom: 13rem;
 }
 
-/* .main-page.container{
+.main-page {
+    position: relative;
+}
+
+.main-page .container {
     height: 100px;
 
     width: 100%;
     background-color: blanchedalmond;
     position: relative;
 
-} */
-.main-page.container {
+}
+
+.main-page .container {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    display: contents;
 }
 
 .main-page-content {
-
+    width: 100%;
     padding-top: 7rem;
     height: 100%;
 
