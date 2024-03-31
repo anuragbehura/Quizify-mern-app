@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../Navbar.css'
-import './Main.css'
+
 import AuthContext from '../../context/AuthContext';
 
 axios.defaults.withCredentials = true;
@@ -37,7 +36,7 @@ function Main() {
         <div className='main-page'>
             <span><Link to='/dashboard'>{user && <h1>Welcome {user.name}</h1>}</Link></span>
             <div className='container'>
-                <div className='content'>
+                <div className='main-page-content'>
                     <div className='input'>
                         <input
                          type="enter-code"

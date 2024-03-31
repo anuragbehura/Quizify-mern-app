@@ -4,7 +4,7 @@ import AfterNav from '../components/Home/AfterNav'
 
 // import AfterNav from '../components/AfterNav'
 import Main from '../components/Home/HomeMain'
-import '../components/Home/Main.css'
+import '../components/Home/HomeMain.css'
 
 
 function Home() {

@@ -44,10 +44,13 @@ const Navbar = () => {
             </div>
             <nav className="nav_content">
                 <ul>
+                    <li class="button"><a href="#">Create Quiz</a></li>
                     <li><Link to='/profile'>Dashboard</Link></li>
                     <li><Link to='/'>About</Link></li>
                     <li><Link onClick={handleLogout}>Logout</Link></li>
+                    
                 </ul>
+                
             </nav>
         </div>
     );

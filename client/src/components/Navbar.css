@@ -6,14 +6,15 @@
   font-size: 18px;
   position: absolute; 
   top: 0; 
-  left: 0; 
+ 
 }
 
 .heading h1 {
-  font-size: 35px;
+  font-size: 40px;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  padding-left: 4rem;
 
 }
 

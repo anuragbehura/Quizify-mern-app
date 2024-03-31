@@ -1,5 +1,5 @@
 .navbar {
-   background-image: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
    color:white;
     padding: 20px 20px; 
     width: 100%; 

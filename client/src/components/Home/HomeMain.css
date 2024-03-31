@@ -1,16 +1,18 @@
-.HomeFooter{
+.HomeFooter {
     bottom: 0;
     position: absolute;
     height: fit-content;
     width: fit-content;
 }
-.main-page{
+
+.main-page {
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 80dvh;
     position: relative;
     padding-top: 6rem;
-    padding-bottom:13rem;
+    padding-bottom: 13rem;
 }
+
 /* .main-page.container{
     height: 100px;
 
@@ -21,19 +23,20 @@
 } */
 .main-page.container {
     width: 100%;
-    max-width: 600px; 
-    margin: 0 auto; 
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.content {
-  
-    padding-top: 4rem;
+.main-page-content {
+
+    padding-top: 7rem;
     height: 100%;
-    
+
 }
 
 .input {
     margin-bottom: 10px;
+
 }
 
 input[type="enter-code"] {
@@ -44,10 +47,33 @@ input[type="enter-code"] {
     border: 2px solid #999;
     border-radius: 5px;
     box-sizing: border-box;
-    box-shadow: inset 0 0 0 1px #999; 
+    box-shadow: inset 0 0 0 1px #261e1e;
     margin-right: -2px;
 }
 
 input[type="enter-code"]::placeholder {
-    color: #999; /* Placeholder text color */
+    color: #999;
+}
+
+.input button {
+    margin-left: 7px;
+    height: 55px;
+    width: 60px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--black);
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1.5px 10px 30px #000;
+    margin-top: 2rem;
+
+}
+
+.input button:hover {
+    background: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
+    color: #fff;
+    box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
+
 }
