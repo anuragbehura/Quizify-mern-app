@@ -5,7 +5,7 @@ import { MdEmail } from 'react-icons/md';
 import { AiFillLock } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AuthContext from '../context/AuthContext';
+// import AuthContext from '../context/AuthContext';
 
 axios.defaults.withCredentials = true;
 
@@ -13,7 +13,7 @@ export default function Login() {
   const notifyForgotPassword = () => toast.info('To reset your password write your email and click on send email button', { autoClose: 9000 })
   const history = useNavigate();
 
-  const { setIsAuth } = useContext(AuthContext);
+  // const { setIsAuth } = useContext(AuthContext);
 
   const [inputs, setInputs] = useState({
     email: '',
@@ -36,7 +36,7 @@ export default function Login() {
       });
       // console.log(res.data); // Handle response appropriately
       toast.success('Logged in successfully', { autoClose: 2000 });
-      setIsAuth(true);
+      // setIsAuth(true);
       history('/home');
     } catch (error) {
       console.error('Login error:', error);
