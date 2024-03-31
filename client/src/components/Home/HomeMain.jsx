@@ -89,8 +89,6 @@ function Main() {
                          id="enter-code"
                          name="enter-code"/>
                         <button type="submit">Join</button>
-
-
                     </div>
                 </div>
             </div>
