@@ -77,13 +77,9 @@ function Main() {
     if (loading) return <div>Loading...</div>;
     if (!user) return toast.info('Please Login first!')
     
+    // <Link to='/Dashboard'><h2>{user.name}</h2></Link>
     return (
-    <div className='MainContsiner'>
-        <div className='userConatiner'>
-            <h1>Welcome</h1>
-            <Link to='/Dashboard'><h2>{user.name}</h2></Link>
         <div className='main-page'>
-            <span><Link to='/dashboard'>{user && <h1>Welcome {user.name}</h1>}</Link></span>
             <div className='container'>
                 <div className='main-page-content'>
                     <div className='input'>
@@ -99,8 +95,6 @@ function Main() {
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     );
 }
 
