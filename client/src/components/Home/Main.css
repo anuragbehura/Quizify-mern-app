@@ -7,3 +7,29 @@
 .main-page{
     background-color: rgb(169, 97, 8);
 }
+
+.MainContsiner{
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 300px;
+}
+
+.userConatiner{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2{
+    font-size: 30px;
+    color: black;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+
+

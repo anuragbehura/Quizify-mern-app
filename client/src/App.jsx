@@ -9,7 +9,8 @@ import { ToastContainer } from 'react-toastify'
 import ResetPassword from './pages/ResetPassword'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
-import AuthContext from './context/AuthContext'
+// import AuthContext from './context/AuthContext'
+import UserContextProvider from './context/UserContextProvider'
 
 
 
@@ -33,7 +34,7 @@ function App() {
         theme='light'
         transition:Bounce
       />
-      <AuthContext.Provider value={{isAuth, setIsAuth, user, setUser}}>
+      <UserContextProvider>
         <BrowserRouter>
           <Routes>
             <Route index path='/' element={<Landing />} />
@@ -45,7 +46,7 @@ function App() {
             <Route path='/profile' element={<Profile />} />
           </Routes>
         </BrowserRouter>
-      </AuthContext.Provider>
+      </UserContextProvider>
     </>
   )
 }
