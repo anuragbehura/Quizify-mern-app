@@ -4,28 +4,8 @@
     height: fit-content;
     width: fit-content;
 }
-<<<<<<< HEAD:client/src/components/Home/HomeMain.css
-
-.main-page {
-=======
 .main-page{
     background-color: rgb(169, 97, 8);
-}
-
-.MainContsiner{
-    /* background-color: black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 300px;
-}
-
-.userConatiner{
-    background-color: white;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 h2{
@@ -36,8 +16,7 @@ h2{
 }
 
 
-
->>>>>>> 87ceeb754586b68dfe064b03db534079ba76de45:client/src/components/Home/Main.css
+.main-page-content{
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 80dvh;
     position: relative;

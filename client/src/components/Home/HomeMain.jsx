@@ -45,18 +45,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
 import UserContext from '../../context/UserContext';
 import { Link } from 'react-router-dom';
-=======
 import '../Navbar.css'
-import './Main.css'
->>>>>>> 87ceeb754586b68dfe064b03db534079ba76de45
-import AuthContext from '../../context/AuthContext';
->>>>>>> 0b46f45720ee01155c9e2e3595af66dcc847b64e
+import './HomeMain.css'
+// import AuthContext from '../../context/AuthContext';
 
 axios.defaults.withCredentials = true;
 
@@ -85,13 +78,10 @@ function Main() {
     if (!user) return toast.info('Please Login first!')
     
     return (
-<<<<<<< HEAD
     <div className='MainContsiner'>
         <div className='userConatiner'>
             <h1>Welcome</h1>
             <Link to='/Dashboard'><h2>{user.name}</h2></Link>
-=======
-        // <span><Link to='/dashboard'>{user && <h1>Welcome {user.name}</h1>}</Link></span>
         <div className='main-page'>
             <span><Link to='/dashboard'>{user && <h1>Welcome {user.name}</h1>}</Link></span>
             <div className='container'>
@@ -108,8 +98,8 @@ function Main() {
                     </div>
                 </div>
             </div>
->>>>>>> 0b46f45720ee01155c9e2e3595af66dcc847b64e
         </div>
+    </div>
     </div>
     );
 }
