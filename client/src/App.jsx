@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify'
 import ResetPassword from './pages/ResetPassword'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import CreateQuiz from './pages/CreateQuiz'
 // import AuthContext from './context/AuthContext'
 import UserContextProvider from './context/UserContextProvider'
 
@@ -44,6 +45,7 @@ function App() {
             <Route path='/resetPassword/:token' element={<ResetPassword />} />
             <Route path='/home' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/createquiz' element={<CreateQuiz />} />
           </Routes>
         </BrowserRouter>
       </UserContextProvider>

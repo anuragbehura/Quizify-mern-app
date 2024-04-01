@@ -1,7 +1,7 @@
 .navbar {
   background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
    color:white;
-    padding: 20px 20px; 
+    padding: 10px 20px; 
     width: 100%; 
     box-sizing: border-box; 
     font-size: 18px;
@@ -11,7 +11,11 @@
     z-index: 1000; 
     display: flex;
     justify-content: space-between;
-   
+    height: 60px;
+    /* -webkit-box-shadow: 2px 2px 26px -4px rgba(117,112,117,1);
+    -moz-box-shadow: 2px 2px 26px -4px rgba(117,112,117,1);
+    box-shadow: 2px 2px 26px -4px rgba(117,112,117,1); */
+
   }
   
   .nav_heading h1 {
