@@ -2,8 +2,9 @@
   position: relative;
   bottom: 0;
   left: 0;
-  padding-top: 1rem;
+  padding: 0.5rem 0;
   background-image: linear-gradient(to bottom right, rgb(20, 13, 66), rgb(74, 10, 74));
+  line-height: 1.2; 
 }
 
 .container {
@@ -11,7 +12,6 @@
   padding-left: 8%;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .row {
@@ -24,9 +24,8 @@
 }
 
 .col_1 p {
-  margin-right: 50%;
+  margin-right: 20%; 
   color: #d8d0f6;
-
 }
 
 .icon {
@@ -51,14 +50,12 @@
   list-style: none;
   width: 120px;
   height: auto;
-
 }
 
 .col_2 li a {
   text-decoration: none;
   padding: 2rem 0;
   color: #d8d0f6;
-
 }
 
 .col_3 {
@@ -80,12 +77,8 @@
 .copyright {
   text-align: center;
   padding: 1rem;
-
-
-
 }
 
 .copyright p {
   color: #fff;
-
 }

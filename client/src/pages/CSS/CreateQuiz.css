@@ -1,0 +1,144 @@
+.CreateQuiz {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
+    position: absolute;
+}
+
+.createquiz-navbar {
+    top: 0;
+    position: relative;
+}
+
+.createquiz-footer {
+    /* bottom: 0; */
+    position: absolute;
+}
+
+.createquiz-container {
+    margin-top: 6rem;
+    height: 27rem;
+    text-align: center;
+    position: relative;
+    padding: 1px;
+    margin-bottom: 8rem;
+}
+
+.createquiz-content {
+    height: 28rem;
+    width: 54rem;
+    /* background-color: rgb(60, 18, 60); */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    -webkit-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
+    -moz-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
+    box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+}
+
+.createquiz-ques {
+    margin-top: 1rem;
+    height: 10rem;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+
+}
+
+#enter-ques {
+    font-size: 1.1rem;
+    background-color: rgb(42, 42, 79);
+    height: 10rem;
+    width: 52rem;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.createquiz-options {
+    padding-top: 1rem;
+
+}
+
+#enter-answer1 {
+    font-size: 1.1rem;
+    background-color: rgb(60, 60, 88);
+    height: 3.5rem;
+    width: 50rem;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#enter-answer2 {
+    font-size: 1.1rem;
+    background-color: rgb(30, 30, 91);
+    height: 3.5rem;
+    width: 50rem;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#enter-answer3 {
+    font-size: 1.1rem;
+    background-color: rgb(60, 60, 88);
+    height: 3.5rem;
+    width: 50rem;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#enter-answer4 {
+    font-size: 1.1rem;
+    background-color: rgb(30, 30, 91);
+    height: 3.5rem;
+    width: 50rem;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.input-container {
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+}
+
+.tick-icon,
+.bin-icon {
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    fill: #888;
+    margin-right: 5px;
+}
+
+.bin-icon:hover{
+fill: #fff;
+}
+.tick-icon:hover{
+fill: #fff;
+}
