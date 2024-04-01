@@ -138,7 +138,9 @@
 
 .bin-icon:hover{
 fill: #fff;
+cursor: pointer;
 }
 .tick-icon:hover{
 fill: #fff;
+cursor: pointer;
 }
