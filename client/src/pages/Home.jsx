@@ -5,14 +5,22 @@ import AfterNav from '../components/Home/AfterNav'
 // import AfterNav from '../components/AfterNav'
 import Main from '../components/Home/HomeMain'
 import '../components/Home/HomeMain.css'
+import './CSS/Home.css'
 
 
 function Home() {
   return (
     <div className='Home'>
-      <AfterNav />
-      <Main />
-      <Footer />
+      <div className='Home-nav'>
+        <AfterNav />
+      </div>
+      <div className='Home-main'>
+        <Main />
+      </div>
+      <div className='Home-footer'>
+        <Footer />
+      </div>
+
     </div>
   )
 }

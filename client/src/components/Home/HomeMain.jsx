@@ -74,7 +74,7 @@ function Main() {
         fetchUserData();
     }, [setUser]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div>Loading...</div>
     if (!user) return toast.info('Please Login first!')
     
     // <Link to='/Dashboard'><h2>{user.name}</h2></Link>
