@@ -33,10 +33,10 @@
     text-align: center;
     position: relative;
     display: inline-block;
-    border-radius: 8px;
-    -webkit-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
-    -moz-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
-    box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
+    border-radius: 6px;
+    /* -webkit-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);
+    -moz-box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);*/
+    /* box-shadow: 2px 2px 26px -4px rgba(117, 112, 117, 1);  */
     padding-left: 1rem;
     padding-right: 1rem;
 
@@ -54,7 +54,7 @@
 
 #enter-ques {
     font-size: 1.1rem;
-    background-color: rgb(42, 42, 79);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 10rem;
     width: 52rem;
     border-radius: 10px;
@@ -71,7 +71,7 @@
 
 #enter-answer1 {
     font-size: 1.1rem;
-    background-color: rgb(60, 60, 88);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 3.5rem;
     width: 50rem;
     margin-bottom: 5px;
@@ -84,7 +84,7 @@
 
 #enter-answer2 {
     font-size: 1.1rem;
-    background-color: rgb(30, 30, 91);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 3.5rem;
     width: 50rem;
     margin-bottom: 5px;
@@ -97,7 +97,7 @@
 
 #enter-answer3 {
     font-size: 1.1rem;
-    background-color: rgb(60, 60, 88);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 3.5rem;
     width: 50rem;
     margin-bottom: 5px;
@@ -110,7 +110,7 @@
 
 #enter-answer4 {
     font-size: 1.1rem;
-    background-color: rgb(30, 30, 91);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
     height: 3.5rem;
     width: 50rem;
     margin-bottom: 5px;
@@ -144,8 +144,20 @@ cursor: pointer;
 fill: #fff;
 cursor: pointer;
 }
-.createquiz-button{
-    height: 100px;
-    width: 100px;
-    margin-top: 1rem;
-}
+.createquiz-button button {
+    
+    /* background-color: #ff0000;  */
+    background-color: #ffffff;
+    border: none; 
+    margin-left: 41rem;
+    border-radius: 5px; 
+    padding: 10px 20px;
+    font-size: 1rem; 
+ }
+ .createquiz-button button:hover{
+   background: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
+  color: #fff;
+  box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
+
+ }
+ 
