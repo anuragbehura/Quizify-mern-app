@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             <nav className="nav_content">
                 <ul>
-                    <li className="button"><a href="#">Create Quiz</a></li>
+                    <li className="button"><Link to="/createquiz">Create Quiz</Link></li>
                     <li><Link to='/profile'>Dashboard</Link></li>
                     <li><Link to='/'>About</Link></li>
                     <li><Link onClick={handleLogout}>Logout</Link></li>

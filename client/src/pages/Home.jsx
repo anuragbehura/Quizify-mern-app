@@ -21,7 +21,10 @@ function Home() {
         <Footer />
       </div>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> da6fb67dbc44fcc045f25fef7b7b8908a37771f2
     </div>
   )
 }

@@ -15,9 +15,9 @@
 
 .main-page-content {
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
-    height: 100dvh;
+    height: 100%;
     position: relative;
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
     padding-bottom: 13rem;
 }
 
@@ -44,13 +44,21 @@
 
 }
 
-.input {
+.input-field {
     margin-bottom: 10px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
+<<<<<<< HEAD
+input {
+    width: 20rem;
+=======
 input[type="enter-code"]{
     width: 50%;
+>>>>>>> da6fb67dbc44fcc045f25fef7b7b8908a37771f2
     padding: 15px;
     height: 60px;
     font-size: 16px;
@@ -58,15 +66,13 @@ input[type="enter-code"]{
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: inset 0 0 0 1px #261e1e;
-    margin-right: -2px;
 }
 
-input[type="enter-code"]::placeholder {
+input::placeholder {
     color: #999;
 }
 
-.input button {
-    margin-left: 7px;
+.input-field button {
     height: 55px;
     width: 60px;
     outline: none;
@@ -77,13 +83,19 @@ input[type="enter-code"]::placeholder {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 1.5px 10px 30px #000;
-    margin-top: 2rem;
-
 }
 
-.input button:hover {
+.input-field button:hover {
     background: linear-gradient(to bottom right, rgb(34, 22, 107), rgb(74, 10, 74));
     color: #fff;
     box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
 
 }
+
+.second{
+    height: 20px;
+    background-color: #fff;
+}
+
+
+
