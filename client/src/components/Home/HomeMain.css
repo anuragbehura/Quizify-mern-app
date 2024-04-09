@@ -27,11 +27,9 @@ h2 {
 
 .main-page .container {
     height: 100px;
-
     width: 100%;
     background-color: blanchedalmond;
     position: relative;
-
 }
 
 .main-page .container {
@@ -54,8 +52,13 @@ h2 {
     gap: 1rem;
 }
 
+<<<<<<< HEAD
 input {
     width: 20rem;
+=======
+input[type="enter-code"]{
+    width: 50%;
+>>>>>>> da6fb67dbc44fcc045f25fef7b7b8908a37771f2
     padding: 15px;
     height: 60px;
     font-size: 16px;

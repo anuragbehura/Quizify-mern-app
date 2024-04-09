@@ -42,6 +42,9 @@ function CreateQuiz() {
             </div>
           </div>
         </div>
+        <div className='createquiz-button'>
+          <button type='save'>Save Question</button>
+        </div>
       </div>
       <div className='createquiz-footer'>
         <Footer />

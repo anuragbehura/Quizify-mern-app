@@ -1,14 +1,32 @@
 .Home{
+<<<<<<< HEAD
     height:100%;
     width:100%;
     background: linear-gradient(to right rgb(0,0,0),rgb(35,20,74));
+=======
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 20, 74));
+>>>>>>> da6fb67dbc44fcc045f25fef7b7b8908a37771f2
     position: absolute;
 }
 .Home-nav{
     top: 0;
     position: relative;
 }
+<<<<<<< HEAD
 .home-footer{
     position: relative;
     bottom: 0;
+=======
+.Home-footer{
+    position: absolute;
+    bottom: 0;
+}
+.Home-main{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+  
+>>>>>>> da6fb67dbc44fcc045f25fef7b7b8908a37771f2
 }
